@@ -1,11 +1,11 @@
 import { BrowserRouter } from "react-router-dom"
-import TopNav from "./components/ui/TopNav"
+import Navbar from "./components/Navbar"
 import AppRoutes from "./routes"
 
 export default function App() {
   return (
     <BrowserRouter>
-      <TopNav />
+      <Navbar />
       <AppRoutes />
     </BrowserRouter>
   )
