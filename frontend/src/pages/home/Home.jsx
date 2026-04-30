@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { 
   Globe, 
   BookOpen, 
@@ -32,13 +32,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FC] font-['Plus_Jakarta_Sans',_sans-serif]">
+    <div className="min-h-screen bg-gray-50 pt-24 mt-10">
       {/* 1. GREETING SECTION */}
-      <header className="pt-24 pb-8 px-6 md:px-10 max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-          {greeting}, User {emoji}
+      <header className="pb-8 px-6 md:px-10 max-w-7xl mx-auto">
+        <h1 className="font-heading text-4xl font-bold text-gray-900">
+          Good Morning, User...
         </h1>
-        <p className="text-gray-500 mt-2 text-lg">Where are you headed today?</p>
+        <p className="text-lg text-gray-400 mt-2">Where are you headed today?</p>
       </header>
 
       {/* 2. SEARCH BAR REMOVED AS REQUESTED */}
@@ -46,9 +46,9 @@ export default function Home() {
       {/* 3. FEATURE CARDS */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto mb-16 grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Card 1 — EXPLORE */}
-        <div 
-          onClick={() => navigate('/explore')}
-          className="bg-white rounded-2xl p-8 shadow-md border border-gray-50 cursor-pointer hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200 group"
+        <Link 
+          to="/explore"
+          className="bg-white rounded-2xl p-8 shadow-md border border-gray-50 cursor-pointer hover:shadow-xl hover:border-gray-300 transition-all duration-200 group block"
         >
           <div className="bg-[#EFF6FF] w-14 h-14 rounded-full flex items-center justify-center mb-6">
             <Globe className="text-[#1E6FF1]" size={28} />
@@ -57,15 +57,15 @@ export default function Home() {
           <p className="text-gray-500 mb-6 leading-relaxed">
             Discover trending destinations, interactive world map, and currency converter.
           </p>
-          <span className="text-[#1E6FF1] font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          <span className="text-[#1E6FF1] font-bold flex items-center gap-2 group-hover:gap-3 transition-all pointer-events-none">
             Start Exploring →
           </span>
-        </div>
+        </Link>
 
         {/* Card 2 — ROAMBOOK */}
-        <div 
-          onClick={() => navigate('/roambook')}
-          className="bg-white rounded-2xl p-8 shadow-md border border-gray-50 cursor-pointer hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200 group"
+        <Link 
+          to="/roambook"
+          className="bg-white rounded-2xl p-8 shadow-md border border-gray-50 cursor-pointer hover:shadow-xl hover:border-gray-300 transition-all duration-200 group block"
         >
           <div className="bg-[#F5F3FF] w-14 h-14 rounded-full flex items-center justify-center mb-6">
             <BookOpen className="text-[#7C3AED]" size={28} />
@@ -74,21 +74,21 @@ export default function Home() {
           <p className="text-gray-500 mb-6 leading-relaxed">
             Your personal travel journal. Log memories, photos, and experiences from every trip.
           </p>
-          <span className="text-[#7C3AED] font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          <span className="text-[#7C3AED] font-bold flex items-center gap-2 group-hover:gap-3 transition-all pointer-events-none">
             Open Journal →
           </span>
-        </div>
+        </Link>
       </section>
 
       {/* 4. TRENDING NEAR YOU SECTION */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto mb-20">
-        <div className="mb-6">
+        <div className="mb-10">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Trending Places Near You</h2>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-200 p-12 flex flex-col items-center justify-center text-center shadow-sm">
+        <div className="bg-white rounded-2xl border border-gray-200 p-12 flex flex-col items-center justify-center text-center shadow-sm min-h-80">
           <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
             <MapPin className="text-gray-400" size={32} />
           </div>
